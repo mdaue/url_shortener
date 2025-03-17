@@ -1,0 +1,8 @@
+{{define "url_row"}}
+<tr>
+    <td class="original-url"><a href="{{.Name}}" target="_blank">{{.Name}}</a></td>
+    <td><a href="/q/{{.Short}}" target="_blank">{{.Short}}</a></td>
+    <td>{{.CreatedAt.Format "2006-01-02 15:04:05"}}</td>
+    <td>{{.Clicks}}</td>
+</tr>
+{{end}}

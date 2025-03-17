@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>{{.Title}}</h1>
+        
+        <div class="card">
+            <h2>Create Short URL</h2>
+            <form hx-post="/create" hx-target="#url-list" hx-swap="afterbegin">
+                <div class="grid">
+                    <label for="url">
+                        Original URL:
+                        <input type="url" id="url" name="url" placeholder="https://example.com" required>
+                    </label>
+                    <div>
+                        <button type="submit">Shorten URL</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="card">
+            <div class="header-row">
+                <h2>Recent URLs</h2>
+                <button hx-get="/refresh" hx-target="#url-list" hx-swap="innerHTML">
+                    Refresh
+                </button>
+            </div>
+            <div id="url-list">
+                {{template "url_list" .}}
+            </div>
+        </div>
+        
+        <footer>
+            <p>Current time: <span id="current-time">{{.CurrentTime}}</span></p>
+        </footer>
+    </main>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

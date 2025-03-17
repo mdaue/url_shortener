@@ -1,0 +1,136 @@
+/* static/css/styles.css */
+body {
+    background-color: #000000;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix the form layout to have button on same line */
+.grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; /* Changed to flex-end to align bottoms */
+    gap: 20px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    color: #cccccc;
+    margin-bottom: 0; /* Remove any bottom margin */
+}
+
+input[type="url"] {
+    width: 100%;
+    height: 45px;
+    padding: 8px 12px;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #ffffff;
+    margin: 0; /* Remove any margin */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+button {
+    height: 45px;
+    padding: 0 24px;
+    background-color: #0099cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0; /* Remove any margin */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+    line-height: 45px; /* Match the height to ensure vertical centering */
+}
+
+/* Ensure the button container has no extra spacing */
+.grid div {
+    display: flex;
+    align-items: flex-end; /* Align to bottom */
+    margin: 0;
+    padding: 0;
+}
+
+button:hover {
+    background-color: #007aa3;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a; /* Match input box background */
+    border-radius: 4px;
+    overflow: hidden; /* Ensures the border-radius applies to the table */
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    color: #ffffff;
+}
+
+th {
+    background-color: #1a1a1a; /* Match input box background */
+    color: #cccccc;
+    font-weight: normal;
+}
+
+.original-url {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+footer {
+    margin-top: 30px;
+    color: #666;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+/* Style for the "No URLs yet" message */
+tbody tr:only-child td {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
+
+/* Make the refresh button take full width */
+.header-row button {
+    width: 100%;
+    margin-left: 10px;
+}

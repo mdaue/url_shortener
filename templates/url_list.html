@@ -1,0 +1,21 @@
+{{define "url_list"}}
+<table>
+    <thead>
+        <tr>
+            <th>Original URL</th>
+            <th>Short URL</th>
+            <th>Created</th>
+            <th>Clicks</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{range .URLs}}
+            {{template "url_row" .}}
+        {{else}}
+            <tr>
+                <td colspan="4">No URLs yet.</td>
+            </tr>
+        {{end}}
+    </tbody>
+</table>
+{{end}}
