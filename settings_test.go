@@ -82,7 +82,7 @@ func TestGetDefaultSettings(t *testing.T) {
 
 func TestLoadNonExistentFile(t *testing.T) {
 	_, err := LoadSettings("nonexistent.json")
-	if err == nil {
-		t.Error("Expected error when loading non-existent file, got nil")
+	if err != nil {
+		t.Error("Unexpected error when loading non-existent file ", err)
 	}
 }

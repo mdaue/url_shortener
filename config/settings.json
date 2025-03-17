@@ -1,0 +1,7 @@
+{
+	"server_port": 8080,
+	"database_path": "config/urls.db",
+	"base_url": "http://localhost:8080",
+	"max_url_length": 2048,
+	"enable_logging": true
+}
