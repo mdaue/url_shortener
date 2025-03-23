@@ -15,6 +15,7 @@ A fast and efficient URL shortening service built in Go, featuring persistent st
 ### Prerequisites
 - Go 1.19 or higher
 - SQLite
+- Redis
 
 ### Installation
 ```bash
