@@ -213,15 +213,15 @@ func (qh QueryHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 // SetupRoutes sets up the routes for the web application
 func SetupRoutes(db *sql.DB, cache *Cache) {
-	// Add the existing REST API
-	http.Handle("/s/", URLFormHandler{db: db, cache: cache})
-	http.Handle("/q/", QueryHandler{db: db, cache: cache})
-
 	// Add new handlers for the web frontend
 	http.Handle("/", HomeHandler{db: db, cache: cache})
 	http.Handle("/create", URLFormHandler{db: db, cache: cache})
 	http.Handle("/refresh", RefreshHandler{db: db})
 	http.Handle("/static/", StaticFileHandler())
+
+	// Add the existing REST API
+	http.Handle("/s/", URLFormHandler{db: db, cache: cache})
+	http.Handle("/q/", QueryHandler{db: db, cache: cache})
 }
 
 // Serve sets up and starts the server
